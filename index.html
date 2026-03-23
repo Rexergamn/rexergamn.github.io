@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A free Discord community built around competitive League of Legends 5v5 tournaments. Join, register your Riot account, and compete." />
-  <meta name="theme-color" content="#5865f2" />
+  <meta name="description" content="Free and paid League of Legends 5v5 tournaments on Discord. MMR-balanced teams, double elimination brackets, role preferences, and cash prizes." />
+  <meta name="theme-color" content="#6366f1" />
   <link rel="canonical" href="https://rexergamn.github.io" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Raven" />
-  <meta property="og:title" content="Raven Gaming Community" />
-  <meta property="og:description" content="A free Discord community built around competitive League of Legends 5v5 tournaments. Join and compete." />
+  <meta property="og:title" content="Raven - League of Legends Tournaments on Discord" />
+  <meta property="og:description" content="Free and paid 5v5 League of Legends tournaments on Discord. MMR-balanced teams, double elimination brackets, and cash prizes." />
   <meta property="og:url" content="https://rexergamn.github.io" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Raven Gaming Community" />
-  <meta name="twitter:description" content="A free Discord community built around competitive League of Legends 5v5 tournaments. Join and compete." />
+  <meta name="twitter:title" content="Raven - League of Legends Tournaments on Discord" />
+  <meta name="twitter:description" content="Free and paid 5v5 League of Legends tournaments on Discord. MMR-balanced teams, double elimination, and cash prizes." />
 
-  <!-- Inline SVG favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='82' font-size='90'>🐦‍⬛</text></svg>" />
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='82' font-size='90'>&#x1F426;</text></svg>" />
+
+  <!-- Geist Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <title>Raven Gaming Community</title>
 
@@ -29,26 +34,36 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0d0f14;
-      --surface:   #161a22;
-      --card:      #1e2330;
-      --card-alt:  #232840;
-      --border:    #2a3040;
-      --accent:    #5865f2;
-      --accent-h:  #4752c4;
-      --gold:      #c89b3c;
-      --green:     #43b581;
-      --text:      #e8eaf0;
-      --muted:     #8b92a8;
-      --radius:    12px;
-      --radius-lg: 18px;
+      --bg:             #0a0c10;
+      --bg-alt:         #0f1218;
+      --surface:        #141820;
+      --card:           #1a1f2e;
+      --border:         #252d3f;
+      --border-hover:   #3a4560;
+      --primary:        #6366f1;
+      --primary-hover:  #4f46e5;
+      --primary-glow:   rgba(99,102,241,0.15);
+      --primary-text:   #a5b4fc;
+      --gold:           #f59e0b;
+      --gold-soft:      #fbbf24;
+      --gold-dim:       rgba(245,158,11,0.15);
+      --green:          #10b981;
+      --green-dim:      rgba(16,185,129,0.12);
+      --red:            #ef4444;
+      --red-dim:        rgba(239,68,68,0.12);
+      --text:           #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted:     #64748b;
+      --radius:         12px;
+      --radius-lg:      18px;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      line-height: 1.6;
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── NAV ── */
@@ -56,243 +71,189 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(13,15,20,0.94);
-      backdrop-filter: blur(14px);
+      background: rgba(10,12,16,0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 2rem;
-      height: 62px;
+      height: 64px;
       gap: 1rem;
     }
     .nav-logo {
       font-size: 1.15rem;
-      font-weight: 700;
+      font-weight: 800;
       color: var(--text);
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.6rem;
       flex-shrink: 0;
     }
-    .nav-logo svg { width: 28px; height: 28px; flex-shrink: 0; }
-    .nav-logo span { color: var(--accent); }
-    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-logo svg { width: 30px; height: 30px; flex-shrink: 0; }
+    .nav-logo span { color: var(--primary); }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
     .nav-links a {
-      color: var(--muted);
+      color: var(--text-secondary);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
+      font-weight: 500;
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--text); }
     .nav-join {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: var(--accent);
+      gap: 0.45rem;
+      background: var(--primary);
       color: #fff;
       text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 600;
-      padding: 0.45rem 1.1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 0.5rem 1.2rem;
       border-radius: 999px;
       transition: background 0.2s, transform 0.15s;
       white-space: nowrap;
     }
-    .nav-join:hover { background: var(--accent-h); transform: translateY(-1px); }
+    .nav-join:hover { background: var(--primary-hover); transform: translateY(-1px); }
+    .nav-join svg { width: 16px; height: 16px; }
 
     /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
-      gap: 0.45rem;
-      padding: 0.8rem 1.9rem;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
       border-radius: var(--radius);
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 700;
       text-decoration: none;
-      transition: background 0.2s, opacity 0.2s, transform 0.15s;
+      transition: background 0.2s, transform 0.15s, border-color 0.2s;
       cursor: pointer;
+      border: none;
+      font-family: inherit;
     }
     .btn:hover { transform: translateY(-2px); }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-h); }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-hover); }
     .btn-outline {
       background: transparent;
       border: 1.5px solid var(--border);
       color: var(--text);
     }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-lg { padding: 1rem 2.4rem; font-size: 1.05rem; }
+    .btn-outline:hover { border-color: var(--primary); color: var(--primary-text); }
+    .btn-lg { padding: 1rem 2.6rem; font-size: 1.05rem; }
+    .btn svg { width: 18px; height: 18px; }
 
     /* ── HERO ── */
     .hero {
-      padding: 5rem 2rem 4rem;
-      background: radial-gradient(ellipse 70% 60% at 20% 50%, rgba(88,101,242,0.12) 0%, transparent 60%);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-      max-width: 1100px;
+      padding: 7rem 2rem 5rem;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 40%, var(--primary-glow) 0%, transparent 65%);
+      text-align: center;
+      max-width: 800px;
       margin: 0 auto;
     }
-    .hero-left {}
     .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      background: rgba(88,101,242,0.15);
-      border: 1px solid rgba(88,101,242,0.4);
-      color: #a5b0ff;
-      font-size: 0.78rem;
+      gap: 0.45rem;
+      background: var(--gold-dim);
+      border: 1px solid rgba(245,158,11,0.3);
+      color: var(--gold-soft);
+      font-size: 0.75rem;
       font-weight: 700;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 0.3rem 0.85rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 999px;
       margin-bottom: 1.5rem;
     }
+    .hero-badge svg { width: 14px; height: 14px; }
     .hero h1 {
-      font-size: clamp(2rem, 4.5vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.025em;
-      line-height: 1.12;
-      margin-bottom: 1.1rem;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 1.3rem;
     }
-    .hero h1 em { font-style: normal; color: var(--accent); }
+    .hero h1 .gold-gradient {
+      background: linear-gradient(135deg, var(--gold-soft) 0%, var(--gold) 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
     .hero-sub {
-      font-size: 1.05rem;
-      color: var(--muted);
-      margin-bottom: 2rem;
-      max-width: 420px;
-    }
-    .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
-
-    /* ── HERO CARD (right side) ── */
-    .hero-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
-      user-select: none;
-    }
-    .hc-header {
-      background: var(--card-alt);
-      padding: 0.85rem 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-    }
-    .hc-title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-    .live-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--green);
-      animation: pulse 2s ease-in-out infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-    .hc-live {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      color: var(--green);
-      font-weight: 600;
-    }
-    .hc-body { padding: 1.1rem; display: flex; flex-direction: column; gap: 0.85rem; }
-    .hc-match {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 0.85rem 1rem;
-    }
-    .hc-match-label {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.5rem;
-    }
-    .hc-teams {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 0.6rem;
-    }
-    .hc-vs { color: var(--muted); font-size: 0.8rem; font-weight: 400; }
-    .hc-bar-wrap {
-      background: var(--border);
-      border-radius: 999px;
-      height: 5px;
-      overflow: hidden;
-    }
-    .hc-bar { height: 100%; background: var(--accent); border-radius: 999px; width: 68%; }
-    .hc-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.6rem;
-    }
-    .hc-stat {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.75rem;
-      font-size: 0.82rem;
-    }
-    .hc-stat-val {
       font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--accent);
-      line-height: 1;
-      margin-bottom: 0.2rem;
+      color: var(--text-secondary);
+      margin: 0 auto 2.5rem;
+      max-width: 520px;
+      line-height: 1.7;
     }
-    .hc-stat-val.gold { color: var(--gold); }
-    .hc-stat-val.green { color: var(--green); }
-    .hc-stat-lbl { color: var(--muted); font-size: 0.75rem; }
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .hero-schedule {
+      margin-top: 2.5rem;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
 
     /* ── SECTIONS ── */
     section { padding: 5rem 1.5rem; }
-    .container { max-width: 1050px; margin: 0 auto; }
+    .container { max-width: 1080px; margin: 0 auto; }
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.73rem;
       font-weight: 700;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.5rem;
+      color: var(--primary);
+      margin-bottom: 0.55rem;
     }
+    .section-label.gold { color: var(--gold); }
     .section-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
       font-weight: 800;
-      letter-spacing: -0.015em;
-      margin-bottom: 0.65rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.7rem;
+      line-height: 1.15;
     }
     .section-sub {
-      color: var(--muted);
-      max-width: 520px;
+      color: var(--text-secondary);
+      max-width: 540px;
       margin-bottom: 2.5rem;
       font-size: 1rem;
     }
 
+    /* ── HOW IT WORKS ── */
+    .pipeline-section { background: var(--bg); }
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .step-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: border-color 0.2s, transform 0.25s;
+    }
+    .step-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .step-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: var(--text);
+    }
+    .step-card p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; }
+
     /* ── FEATURE GRID ── */
+    .features-section { background: var(--bg-alt); }
     .feature-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.1rem;
     }
     .feature-card {
@@ -300,90 +261,146 @@
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.5rem;
-      transition: border-color 0.2s, transform 0.2s;
+      transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
-    .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .feature-icon {
-      font-size: 1.75rem;
-      margin-bottom: 0.7rem;
-      line-height: 1;
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(99,102,241,0.08);
     }
-    .feature-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
-    .feature-card p { font-size: 0.88rem; color: var(--muted); line-height: 1.55; }
-
-    /* ── TOURNAMENT SECTION ── */
-    .tournament-section { background: var(--surface); }
-    .t-stats {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2.5rem;
-    }
-    .t-stat {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-    }
-    .t-stat .num {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1;
-      margin-bottom: 0.3rem;
-    }
-    .t-stat p { font-size: 0.85rem; color: var(--muted); }
-
-    /* ── STEPS ── */
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
-      position: relative;
-    }
-    .step-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.75rem 1.5rem;
-    }
-    .step-num {
-      display: inline-flex;
+    .feature-icon-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: var(--accent);
-      color: #fff;
-      font-weight: 800;
-      font-size: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
+      background: var(--primary-glow);
+      color: var(--primary);
     }
-    .step-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.35rem; }
-    .step-card p { font-size: 0.88rem; color: var(--muted); }
-    .step-cmd {
-      display: inline-block;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      color: #a5b0ff;
-      font-family: "Courier New", monospace;
+    .feature-icon-wrap.green { background: var(--green-dim); color: var(--green); }
+    .feature-icon-wrap.gold { background: var(--gold-dim); color: var(--gold); }
+    .feature-icon-wrap svg { width: 22px; height: 22px; }
+    .feature-card h3 { font-size: 0.98rem; font-weight: 700; margin-bottom: 0.35rem; }
+    .feature-card p { font-size: 0.86rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── PRIZE SECTION ── */
+    .prize-section {
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 80%, var(--gold-dim) 0%, transparent 60%),
+        var(--bg);
+    }
+    .prize-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .prize-split {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .prize-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .prize-bar-label {
       font-size: 0.82rem;
-      padding: 0.2rem 0.55rem;
-      border-radius: 5px;
-      margin-top: 0.5rem;
+      font-weight: 700;
+      width: 36px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .prize-bar-track {
+      flex: 1;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--border);
+      overflow: hidden;
+    }
+    .prize-bar-fill { height: 100%; border-radius: 999px; }
+    .prize-bar-fill.gold { background: linear-gradient(90deg, var(--gold), var(--gold-soft)); width: 60%; }
+    .prize-bar-fill.silver { background: linear-gradient(90deg, #94a3b8, #cbd5e1); width: 30%; }
+    .prize-bar-fill.bronze { background: linear-gradient(90deg, #b45309, #d97706); width: 10%; }
+    .prize-bar-pct {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      width: 36px;
+      flex-shrink: 0;
+    }
+    .prize-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+    .prize-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .prize-card:hover { transform: translateY(-2px); }
+    .prize-card.green-border { border-color: rgba(16,185,129,0.4); }
+    .prize-card.gold-border {
+      border-color: rgba(245,158,11,0.5);
+      background: linear-gradient(135deg, var(--card) 0%, rgba(245,158,11,0.05) 100%);
+    }
+    .prize-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .prize-card-icon.green { background: var(--green-dim); color: var(--green); }
+    .prize-card-icon.gold { background: var(--gold-dim); color: var(--gold); }
+    .prize-card-icon svg { width: 22px; height: 22px; }
+    .prize-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .prize-card p { font-size: 0.82rem; color: var(--text-secondary); }
+    .prize-card .badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      background: var(--gold-dim);
+      color: var(--gold);
+      margin-left: auto;
+      flex-shrink: 0;
     }
 
     /* ── JOIN CTA ── */
-    .join-section { background: var(--surface); text-align: center; }
-    .join-inner {
-      max-width: 600px;
-      margin: 0 auto;
+    .join-section {
+      background:
+        radial-gradient(ellipse 50% 60% at 50% 50%, var(--primary-glow) 0%, transparent 60%),
+        var(--bg-alt);
+      text-align: center;
+      padding: 6rem 1.5rem;
     }
-    .join-inner h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 0.75rem; }
-    .join-inner p { color: var(--muted); font-size: 1.05rem; margin-bottom: 2rem; }
+    .join-inner { max-width: 600px; margin: 0 auto; }
+    .join-inner h2 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      letter-spacing: -0.02em;
+    }
+    .join-inner p { color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem; }
+    .join-note {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-top: 1rem;
+    }
 
     /* ── POLICY CARDS ── */
+    .legal-section { background: var(--bg); }
     .policy-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -400,39 +417,70 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
     }
-    .policy-card:hover { border-color: var(--accent); }
-    .policy-card .p-icon { font-size: 1.8rem; flex-shrink: 0; }
+    .policy-card:hover { border-color: var(--primary); transform: translateY(-2px); }
+    .policy-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: var(--primary-glow);
+      color: var(--primary);
+    }
+    .policy-card-icon svg { width: 22px; height: 22px; }
     .policy-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .policy-card p { font-size: 0.82rem; color: var(--muted); }
+    .policy-card p { font-size: 0.82rem; color: var(--text-secondary); }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem 1.5rem;
       text-align: center;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 0.82rem;
     }
-    footer a { color: var(--muted); text-decoration: underline; }
-    .footer-links { display: flex; justify-content: center; gap: 1.25rem; margin-top: 0.6rem; flex-wrap: wrap; }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--text-secondary); }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.65rem; flex-wrap: wrap; }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in:nth-child(2) { transition-delay: 0.08s; }
+    .fade-in:nth-child(3) { transition-delay: 0.16s; }
+    .fade-in:nth-child(4) { transition-delay: 0.24s; }
+    .fade-in:nth-child(5) { transition-delay: 0.32s; }
+    .fade-in:nth-child(6) { transition-delay: 0.40s; }
+    .fade-in:nth-child(7) { transition-delay: 0.48s; }
+    .fade-in:nth-child(8) { transition-delay: 0.56s; }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .step-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 800px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 3.5rem 1.5rem 3rem;
-        text-align: center;
-      }
-      .hero-sub { max-width: 100%; }
-      .hero-cta { justify-content: center; }
-      .hero-card { max-width: 420px; margin: 0 auto; }
+      .hero { padding: 5rem 1.5rem 3.5rem; }
+      .step-grid { grid-template-columns: 1fr; }
+      .prize-layout { grid-template-columns: 1fr; gap: 2rem; }
     }
     @media (max-width: 560px) {
       nav { padding: 0 1rem; }
       .nav-links { display: none; }
-      .hero { gap: 2rem; }
+      section { padding: 3.5rem 1rem; }
+      .hero { padding: 3.5rem 1rem 2.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -441,17 +489,20 @@
 <!-- NAV -->
 <nav>
   <a class="nav-logo" href="#" aria-label="Raven home">
-    <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-      <text y="82" font-size="88">🐦‍⬛</text>
+    <svg viewBox="0 0 30 30" fill="none" aria-hidden="true" focusable="false">
+      <path d="M8 24C6 22 5 19 5 16C5 11 8 7 13 5C14 4.5 15 4.5 15 5C15 6 14 7 13 8C17 6 21 6 24 8C26 10 27 13 26 16C25 19 23 21 20 23C18 24.5 15 25.5 12 25C10.5 24.8 9 24.5 8 24Z" fill="var(--primary)" opacity="0.9"/>
+      <circle cx="11" cy="13" r="1.5" fill="var(--bg)"/>
     </svg>
     <span>Raven</span>
   </a>
   <div class="nav-links" role="navigation" aria-label="Site navigation">
-    <a href="#tournaments">Tournaments</a>
-    <a href="#start">Get Started</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#features">Features</a>
+    <a href="#prizes">Prizes</a>
     <a href="#legal">Legal</a>
   </div>
   <a class="nav-join" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer" aria-label="Join the Raven Discord server">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
     Join Server
   </a>
 </nav>
@@ -459,134 +510,156 @@
 <!-- HERO -->
 <main>
 <section class="hero" aria-label="Introduction">
-  <div class="hero-left">
-    <div class="hero-badge">Free to Join</div>
-    <h1>5v5 League tournaments.<br>Every <em>week</em>.</h1>
-    <p class="hero-sub">We run 5v5 League of Legends tournaments inside Discord. Teams are balanced by rank, brackets update live, and it's all free.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary btn-lg" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">
-        Join the Server
-      </a>
-      <a class="btn btn-outline" href="#tournaments">How It Works ↓</a>
-    </div>
+  <div class="hero-badge">
+    <i data-lucide="trophy" style="width:14px;height:14px"></i>
+    Free &amp; Paid Tournaments
   </div>
+  <h1>Compete in League<br>tournaments. Win<br><span class="gold-gradient">real prizes.</span></h1>
+  <p class="hero-sub">Join a community running 5v5 League of Legends tournaments on Discord. MMR-balanced teams, double elimination brackets, role preferences, and cash prizes.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary btn-lg" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">
+      Join Discord
+    </a>
+    <a class="btn btn-outline" href="#how-it-works">
+      See How It Works
+      <i data-lucide="chevron-down" style="width:16px;height:16px"></i>
+    </a>
+  </div>
+  <p class="hero-schedule">Biweekly Saturdays at 3:30 PM CT</p>
+</section>
 
-  <!-- Tournament card -->
-  <div class="hero-card" aria-hidden="true">
-    <div class="hc-header">
-      <div class="hc-title">Saturday 5v5</div>
-      <div class="hc-live"><div class="live-dot"></div> Live</div>
-    </div>
-    <div class="hc-body">
-      <div class="hc-match">
-        <div class="hc-match-label">Winners Round 2</div>
-        <div class="hc-teams">
-          <span>Team 1</span>
-          <span class="hc-vs">vs</span>
-          <span>Team 3</span>
-        </div>
-        <div class="hc-bar-wrap"><div class="hc-bar"></div></div>
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="pipeline-section">
+  <div class="container">
+    <div class="section-label">Tournament Flow</div>
+    <h2 class="section-title">How it works</h2>
+    <p class="section-sub">From signup to prize pool in six steps. Everything is automated.</p>
+
+    <div class="step-grid">
+      <div class="step-card fade-in">
+        <h3>Register</h3>
+        <p>Click the Register button on the tournament announcement. Enter your Riot ID and you're signed up.</p>
       </div>
-      <div class="hc-stats">
-        <div class="hc-stat">
-          <div class="hc-stat-val">25</div>
-          <div class="hc-stat-lbl">Players</div>
-        </div>
-        <div class="hc-stat">
-          <div class="hc-stat-val gold">5</div>
-          <div class="hc-stat-lbl">Teams</div>
-        </div>
-        <div class="hc-stat">
-          <div class="hc-stat-val green">✓</div>
-          <div class="hc-stat-lbl">Balanced</div>
-        </div>
-        <div class="hc-stat">
-          <div class="hc-stat-val green">✓</div>
-          <div class="hc-stat-lbl">Verified</div>
-        </div>
+      <div class="step-card fade-in">
+        <h3>Account Verified</h3>
+        <p>Your League account is verified through the Riot API to ensure fair and competitive matchups for everyone.</p>
+      </div>
+      <div class="step-card fade-in">
+        <h3>Check In</h3>
+        <p>Before the tournament starts, you'll get a notification to confirm you're ready. Quick and easy.</p>
+      </div>
+      <div class="step-card fade-in">
+        <h3>Teams Balanced</h3>
+        <p>Teams are balanced by estimated MMR so every match is competitive. Choose your preferred role and we'll place you there.</p>
+      </div>
+      <div class="step-card fade-in">
+        <h3>Play Matches</h3>
+        <p>Double elimination means everyone gets a second chance. Live brackets update after every match so you can follow along.</p>
+      </div>
+      <div class="step-card fade-in">
+        <h3>Win Prizes</h3>
+        <p>Top teams take home the prize pool. Both free and paid tournaments available.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TOURNAMENTS -->
-<section id="tournaments" class="tournament-section">
+<!-- FEATURES -->
+<section id="features" class="features-section">
   <div class="container">
-    <div class="section-label">League of Legends</div>
-    <h2 class="section-title">How tournaments work</h2>
-    <p class="section-sub">Here's what happens when you join a tournament.</p>
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Built for competitive play</h2>
+    <p class="section-sub">Every tournament is organized, balanced, and run automatically so you can focus on playing.</p>
 
     <div class="feature-grid">
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Writing hand">✍️</div>
-        <h3>Registration &amp; Check-In</h3>
-        <p>Click Register, type your Riot ID, and you're signed up. Before the tournament starts, everyone checks in so we know who's actually playing.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap"><i data-lucide="git-branch"></i></div>
+        <h3>Double Elimination</h3>
+        <p>Winners bracket and losers bracket. One loss doesn't knock you out. Fight back through the lower bracket to the Grand Finals.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Balance scale">⚖️</div>
-        <h3>Skill-Based Team Balancing</h3>
-        <p>Teams are balanced using ranked data from the Riot API so games aren't lopsided.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap"><i data-lucide="scale"></i></div>
+        <h3>MMR-Balanced Teams</h3>
+        <p>Teams are built using estimated MMR so every match is competitive. No stomps, no coin flips.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Map">🗺️</div>
-        <h3>Visual Brackets</h3>
-        <p>A bracket image gets posted and updates after every match. We run double elimination so you get a second chance if you lose early.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap"><i data-lucide="gamepad-2"></i></div>
+        <h3>Play Your Role</h3>
+        <p>Choose your preferred positions and we'll do our best to place you where you want to play.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Game controller">🎮</div>
-        <h3>Role Preferences</h3>
-        <p>Pick your preferred roles (Top, Jungle, Mid, ADC, Support) and the bot tries to put you where you want to play.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap green"><i data-lucide="shield-check"></i></div>
+        <h3>Competitive Integrity</h3>
+        <p>Every player is verified through the Riot API. Accounts are reviewed to keep games fair for everyone.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Busts in silhouette">👥</div>
-        <h3>Subs</h3>
-        <p>If someone doesn't check in or drops out mid-tournament, subs get offered the spot right away.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap"><i data-lucide="image"></i></div>
+        <h3>Live Brackets</h3>
+        <p>Visual brackets update after every match. Color-coded by status so you always know where you stand.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon" role="img" aria-label="Clipboard">📋</div>
-        <h3>Live Dashboard</h3>
-        <p>A pinned message in Discord shows who's registered, what teams look like, match results, and standings. Updates after every match.</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap gold"><i data-lucide="trophy"></i></div>
+        <h3>Free &amp; Paid Events</h3>
+        <p>Play for fun in free tournaments or compete for cash in paid events. Something for every level of competition.</p>
       </div>
-    </div>
-
-    <div class="t-stats" aria-label="Tournament stats">
-      <div class="t-stat">
-        <div class="num">20+</div>
-        <p>Players per tournament</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap green"><i data-lucide="users"></i></div>
+        <h3>All Ranks Welcome</h3>
+        <p>Iron to Challenger, brand new or veteran. MMR balancing means every player contributes and every game is competitive.</p>
       </div>
-      <div class="t-stat">
-        <div class="num">5v5</div>
-        <p>Full teams, every role covered</p>
-      </div>
-      <div class="t-stat">
-        <div class="num">Free</div>
-        <p>No entry fee, no paywall</p>
-      </div>
-      <div class="t-stat">
-        <div class="num">Fair</div>
-        <p>Teams balanced by rank, not random</p>
+      <div class="feature-card fade-in">
+        <div class="feature-icon-wrap"><i data-lucide="monitor"></i></div>
+        <h3>Live Updates</h3>
+        <p>Follow along with real-time match results, team rosters, and standings updated after every game.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW TO GET STARTED -->
-<section id="start">
+<!-- PRIZES -->
+<section id="prizes" class="prize-section">
   <div class="container">
-    <div class="section-label">Getting Started</div>
-    <h2 class="section-title">How to play</h2>
-    <p class="section-sub">Two steps. No downloads, no setup.</p>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">1</div>
-        <h3>Join the Server</h3>
-        <p>Click the invite link below to join the Discord server.</p>
-        <a class="btn btn-primary" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer" style="margin-top:1rem;font-size:0.88rem;padding:0.55rem 1.2rem;">Join Now</a>
+    <div class="prize-layout">
+      <div>
+        <div class="section-label gold">Prizes</div>
+        <h2 class="section-title">Play for glory.<br>Or play for cash.</h2>
+        <p class="section-sub">We run both free and paid tournaments. Compete for bragging rights or put up a buy-in and take home real cash.</p>
+
+        <div class="prize-split">
+          <div class="prize-bar">
+            <div class="prize-bar-label" style="color:var(--gold)">1st</div>
+            <div class="prize-bar-track"><div class="prize-bar-fill gold"></div></div>
+            <div class="prize-bar-pct">60%</div>
+          </div>
+          <div class="prize-bar">
+            <div class="prize-bar-label" style="color:var(--text-secondary)">2nd</div>
+            <div class="prize-bar-track"><div class="prize-bar-fill silver"></div></div>
+            <div class="prize-bar-pct">30%</div>
+          </div>
+          <div class="prize-bar">
+            <div class="prize-bar-label" style="color:#d97706">3rd</div>
+            <div class="prize-bar-track"><div class="prize-bar-fill bronze"></div></div>
+            <div class="prize-bar-pct">10%</div>
+          </div>
+        </div>
       </div>
-      <div class="step-card">
-        <div class="step-num" aria-hidden="true">2</div>
-        <h3>Register for a Tournament</h3>
-        <p>When a tournament is announced, click the <strong>Register</strong> button. You'll enter your Riot ID, your account gets verified, and you're in.</p>
+
+      <div class="prize-cards">
+        <div class="prize-card green-border fade-in">
+          <div class="prize-card-icon green"><i data-lucide="heart"></i></div>
+          <div>
+            <h3>Free Tournaments</h3>
+            <p>No buy-in required. Compete for bragging rights and community recognition.</p>
+          </div>
+        </div>
+        <div class="prize-card gold-border fade-in">
+          <div class="prize-card-icon gold"><i data-lucide="banknote"></i></div>
+          <div>
+            <h3>Cash Prize Tournaments</h3>
+            <p>Entry fee goes to the prize pool. Top teams take home real money.</p>
+          </div>
+          <div class="badge">New</div>
+        </div>
       </div>
     </div>
   </div>
@@ -595,30 +668,32 @@
 <!-- JOIN CTA -->
 <section class="join-section">
   <div class="container join-inner">
-    <h2>Come play.</h2>
-    <p>No fees, no downloads. Just join the Discord and sign up for the next tournament.</p>
+    <h2>Ready to compete?</h2>
+    <p>Join a growing community of competitive League players. No downloads, no complicated setup. Just click and play.</p>
     <a class="btn btn-primary btn-lg" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">
-      Join Discord Server
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      Join the Discord
     </a>
+    <p class="join-note">Free to join. Biweekly Saturdays at 3:30 PM CT.</p>
   </div>
 </section>
 
 <!-- LEGAL -->
-<section id="legal">
+<section id="legal" class="legal-section">
   <div class="container">
     <div class="section-label">Legal</div>
     <h2 class="section-title">Policies</h2>
     <p class="section-sub">Not affiliated with, endorsed by, or in partnership with Riot Games or Discord Inc.</p>
     <div class="policy-grid">
-      <a class="policy-card" href="https://github.com/Rexergamn/raven-bot-legal/blob/main/TOS.md" target="_blank" rel="noopener noreferrer">
-        <div class="p-icon" role="img" aria-label="Scroll">📜</div>
+      <a class="policy-card fade-in" href="https://github.com/Rexergamn/raven-bot-legal/blob/main/TOS.md" target="_blank" rel="noopener noreferrer">
+        <div class="policy-card-icon"><i data-lucide="scroll-text"></i></div>
         <div>
           <h3>Terms of Service</h3>
           <p>Rules governing use of Raven Bot and all its features.</p>
         </div>
       </a>
-      <a class="policy-card" href="https://github.com/Rexergamn/raven-bot-legal/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">
-        <div class="p-icon" role="img" aria-label="Lock">🔒</div>
+      <a class="policy-card fade-in" href="https://github.com/Rexergamn/raven-bot-legal/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">
+        <div class="policy-card-icon"><i data-lucide="lock"></i></div>
         <div>
           <h3>Privacy Policy</h3>
           <p>What data Raven collects, how it's stored, and your rights.</p>
@@ -634,8 +709,26 @@
   <p>Raven Gaming Community. Not affiliated with Riot Games or Discord Inc.</p>
   <div class="footer-links">
     <a href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">Join Server</a>
+    <a href="https://github.com/Rexergamn/raven-bot-legal/blob/main/TOS.md" target="_blank" rel="noopener noreferrer">Terms</a>
+    <a href="https://github.com/Rexergamn/raven-bot-legal/blob/main/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy</a>
   </div>
 </footer>
+
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>
