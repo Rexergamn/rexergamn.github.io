@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="A Discord community running free 5v5 League of Legends tournaments. Verified accounts, MMR-balanced teams, double elimination. Biweekly Saturdays." />
-  <meta name="theme-color" content="#f6f6f2" />
+  <meta name="theme-color" content="#14181f" />
   <link rel="canonical" href="https://rexergamn.github.io" />
 
   <!-- Open Graph -->
@@ -13,9 +13,11 @@
   <meta property="og:title" content="Raven | Free 5v5 League tournaments on Discord" />
   <meta property="og:description" content="Free 5v5 League of Legends tournaments run start to finish on Discord. Verified accounts, balanced teams, double elimination. Biweekly Saturdays." />
   <meta property="og:url" content="https://rexergamn.github.io" />
+  <meta property="og:image" content="https://rexergamn.github.io/bracket.png" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://rexergamn.github.io/bracket.png" />
   <meta name="twitter:title" content="Raven | Free 5v5 League tournaments on Discord" />
   <meta name="twitter:description" content="Free 5v5 League of Legends tournaments run start to finish on Discord. Verified accounts, balanced teams, double elimination. Biweekly Saturdays." />
 
@@ -30,13 +32,11 @@
 
   <style>
     :root {
-      --paper: #f6f6f2;
-      --ink: #181a1f;
-      --muted: #59616c;
-      --line: #d9dad2;
-      --card: #ffffff;
-      --blue: #3d4fc4;
-      --gold: #9c7a24;
+      --paper: #14181f;
+      --ink: #e5e7eb;
+      --muted: #97a0ad;
+      --line: #2a3140;
+      --blue: #6f9df8;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -63,8 +63,8 @@
     /* header */
     header { border-bottom: 1px solid var(--line); }
     .masthead {
-      display: flex; align-items: baseline; justify-content: space-between;
-      padding: 1.1rem 0;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 0;
     }
     .wordmark {
       font-family: "Bebas Neue", sans-serif;
@@ -90,7 +90,7 @@
       font-size: clamp(3rem, 8.5vw, 5.5rem);
       line-height: 0.95;
       letter-spacing: 0.01em;
-      margin: 0.75rem 0 1.5rem;
+      margin: 0.9rem 0 1.4rem;
       max-width: 16ch;
     }
     h2 {
@@ -99,14 +99,14 @@
       font-size: clamp(1.9rem, 4vw, 2.6rem);
       line-height: 1;
       letter-spacing: 0.02em;
-      margin-bottom: 1.25rem;
+      margin: 0.4rem 0 1rem;
     }
     p { max-width: 62ch; }
     p + p { margin-top: 1rem; }
     .muted { color: var(--muted); }
 
-    section { padding: 4.5rem 0 0; }
-    .hero { padding: 5rem 0 4.5rem; }
+    section { padding: 4rem 0 0; }
+    .hero { padding: 4.5rem 0 3.5rem; }
     .hero .lede { font-size: 1.15rem; }
 
     .cta {
@@ -120,10 +120,10 @@
       color: var(--paper);
       background: var(--ink);
       padding: 0.8rem 1.6rem;
-      margin-top: 1.75rem;
+      margin-top: 1.5rem;
       transition: background 0.15s;
     }
-    .cta:hover { background: var(--blue); }
+    .cta:hover { background: var(--blue); color: var(--paper); }
     .schedule {
       display: block;
       margin-top: 0.9rem;
@@ -145,9 +145,9 @@
     .steps li {
       counter-increment: step;
       display: grid;
-      grid-template-columns: 3.5rem 1fr;
+      grid-template-columns: 3.25rem 1fr;
       gap: 1rem;
-      padding: 1.4rem 0;
+      padding: 1.25rem 0;
       border-bottom: 1px solid var(--line);
     }
     .steps li::before {
@@ -162,52 +162,20 @@
     .steps p { font-size: 0.98rem; color: var(--muted); max-width: 58ch; }
 
     /* the bracket */
-    .bracket-scroll { overflow-x: auto; margin-top: 2rem; padding-bottom: 0.5rem; }
-    .bracket {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(15rem, 1fr));
-      gap: 1.25rem;
-      min-width: 48rem;
-      align-items: start;
-    }
-    .bcol { display: flex; flex-direction: column; gap: 1.25rem; }
-    .bcol > .kicker { font-size: 0.78rem; }
-    .match {
-      background: var(--card);
+    .bracket-img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: 1.5rem;
       border: 1px solid var(--line);
-      border-top: 3px solid var(--ink);
+      border-radius: 6px;
     }
-    .match.finals { border-top-color: var(--gold); }
-    .match .mtag {
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 700;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 0.45rem 0.8rem 0;
-    }
-    .match .team {
-      display: flex; justify-content: space-between; align-items: baseline;
-      gap: 1rem;
-      font-family: "Rajdhani", sans-serif;
-      font-weight: 700;
-      font-size: 0.98rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.8rem;
-    }
-    .match .team:last-child { padding-bottom: 0.6rem; }
-    .match .team .score { font-size: 0.9rem; }
-    .match .team.out { color: var(--muted); font-weight: 600; }
-    .match .team.tbd { color: var(--muted); font-weight: 600; }
-    figcaption { margin-top: 1.25rem; font-size: 0.95rem; color: var(--muted); max-width: 62ch; }
+    figcaption { margin-top: 1rem; font-size: 0.95rem; color: var(--muted); max-width: 62ch; }
 
     /* footer */
-    .join { padding-bottom: 4.5rem; }
+    .join { padding-bottom: 4rem; }
     footer {
       border-top: 1px solid var(--line);
-      margin-top: 4.5rem;
       padding: 2rem 0 3rem;
       font-size: 0.9rem;
       color: var(--muted);
@@ -235,7 +203,7 @@
 <section class="hero wrap" aria-label="Introduction">
   <p class="kicker">A League of Legends community on Discord</p>
   <h1>Free 5v5 tournaments, run start to finish on Discord.</h1>
-  <p class="lede">Raven is the bot behind our biweekly tournament nights. It verifies your Riot account, drafts balanced teams, and keeps the bracket updated while you play. Come with four friends or come alone; either way you get a team.</p>
+  <p class="lede">Raven is the bot behind our biweekly tournament nights. It verifies your Riot account, drafts balanced teams, and keeps the bracket updated while you play. Come with a full five or come alone: getting drafted onto a team is the easiest way to find a new group to queue with.</p>
   <a class="cta" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">Join the Discord</a>
   <span class="schedule">Biweekly Saturdays &middot; 3:30 PM Central</span>
 </section>
@@ -265,7 +233,7 @@
     <li>
       <div>
         <strong>Play the bracket</strong>
-        <p>Double elimination. Losing a match drops you to the losers bracket, not out of the tournament, and the bracket image updates after every game.</p>
+        <p>Matches run back to back through the evening. Moderators report results in Discord and the bracket updates as you go.</p>
       </div>
     </li>
   </ol>
@@ -274,51 +242,11 @@
 <section id="bracket" class="wrap" aria-label="Example bracket">
   <p class="kicker">Double elimination</p>
   <h2>Everyone gets a second life</h2>
+  <p>Every tournament is double elimination. Losing a match drops you into the losers bracket, where you can fight all the way back to the Grand Finals. Raven draws the bracket and posts an updated image after every game.</p>
   <figure>
-    <div class="bracket-scroll">
-      <div class="bracket">
-        <div class="bcol">
-          <p class="kicker">Opening round</p>
-          <div class="match">
-            <p class="mtag">M1 &middot; Winners round 1</p>
-            <div class="team"><span>Mid or Feed</span><span class="score">1</span></div>
-            <div class="team out"><span>Ward Bots</span><span class="score">0</span></div>
-          </div>
-          <div class="match">
-            <p class="mtag">M2 &middot; Winners round 1</p>
-            <div class="team out"><span>Gnar Fan Club</span><span class="score">0</span></div>
-            <div class="team"><span>Five Supports</span><span class="score">1</span></div>
-          </div>
-        </div>
-        <div class="bcol">
-          <p class="kicker">Middle rounds</p>
-          <div class="match">
-            <p class="mtag">M3 &middot; Losers round 1</p>
-            <div class="team"><span>Ward Bots</span><span class="score">1</span></div>
-            <div class="team out"><span>Gnar Fan Club</span><span class="score">0</span></div>
-          </div>
-          <div class="match">
-            <p class="mtag">M4 &middot; Winners final</p>
-            <div class="team out"><span>Mid or Feed</span><span class="score">0</span></div>
-            <div class="team"><span>Five Supports</span><span class="score">1</span></div>
-          </div>
-        </div>
-        <div class="bcol">
-          <p class="kicker">Endgame</p>
-          <div class="match">
-            <p class="mtag">M5 &middot; Losers final</p>
-            <div class="team tbd"><span>Ward Bots</span></div>
-            <div class="team tbd"><span>Mid or Feed</span></div>
-          </div>
-          <div class="match finals">
-            <p class="mtag">M6 &middot; Grand finals</p>
-            <div class="team"><span>Five Supports</span></div>
-            <div class="team tbd"><span>Winner of M5</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <figcaption>A four-team night, as Raven tracks it. Ward Bots dropped their opener and can still fight back to the Grand Finals through the losers bracket.</figcaption>
+    <img class="bracket-img" src="bracket.png" width="1400" height="736"
+         alt="A Raven tournament bracket, mid-tournament. Winners bracket on top, losers bracket below. Ward Bots lost their opening match and are still alive in losers round 2." />
+    <figcaption>An actual Raven bracket, mid-tournament. Ward Bots lost their opener to Mid or Feed and are still fighting through the losers bracket.</figcaption>
   </figure>
 </section>
 
@@ -337,7 +265,7 @@
 <section class="wrap join" aria-label="Join">
   <p class="kicker">Next tournament night</p>
   <h2>Ready when you are</h2>
-  <p>No downloads and no setup. Join the server, link your Riot ID, and you're in the next bracket.</p>
+  <p>No downloads and no setup. Join the server, link your Riot ID, and you're in the next bracket. Most people show up solo and leave with nine new people to play with.</p>
   <a class="cta" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">Join the Discord</a>
   <span class="schedule">Biweekly Saturdays &middot; 3:30 PM Central</span>
 </section>
