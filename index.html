@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A Discord gaming community built around free and paid League of Legends 5v5 tournaments, plus a full economy: dungeon crawls, casino games, trading cards, clans, and daily quests." />
+  <meta name="description" content="A Discord gaming community built around free League of Legends 5v5 tournaments: MMR-balanced teams, double elimination brackets, player profiles, and stream overlays. Plus dungeon crawls, trading cards, clans, and daily quests." />
   <meta name="theme-color" content="#6366f1" />
   <link rel="canonical" href="https://rexergamn.github.io" />
 
@@ -11,13 +11,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Raven" />
   <meta property="og:title" content="Raven - LoL Tournaments &amp; Gaming Community on Discord" />
-  <meta property="og:description" content="Free and paid 5v5 League tournaments with MMR-balanced teams and cash prizes. Plus dungeon crawls, casino games, trading cards, and clans." />
+  <meta property="og:description" content="Free 5v5 League tournaments with MMR-balanced teams and double elimination brackets. Plus dungeon crawls, trading cards, clans, and daily quests." />
   <meta property="og:url" content="https://rexergamn.github.io" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Raven - LoL Tournaments &amp; Gaming Community on Discord" />
-  <meta name="twitter:description" content="Free and paid 5v5 League tournaments with MMR-balanced teams and cash prizes. Plus dungeon crawls, casino games, trading cards, and clans." />
+  <meta name="twitter:description" content="Free 5v5 League tournaments with MMR-balanced teams and double elimination brackets. Plus dungeon crawls, trading cards, clans, and daily quests." />
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='82' font-size='90'>&#x1F426;</text></svg>" />
@@ -360,6 +360,7 @@
     }
     .prize-card-icon.green { background: var(--green-dim); color: var(--green); }
     .prize-card-icon.gold { background: var(--gold-dim); color: var(--gold); }
+    .prize-card-icon.indigo { background: rgba(99,102,241,0.12); color: var(--primary); }
     .prize-card-icon svg { width: 22px; height: 22px; }
     .prize-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.2rem; }
     .prize-card p { font-size: 0.82rem; color: var(--text-secondary); }
@@ -499,7 +500,7 @@
     <a href="#how-it-works">How It Works</a>
     <a href="#features">Features</a>
     <a href="#community">Community</a>
-    <a href="#prizes">Prizes</a>
+    <a href="#fair-play">Fair Play</a>
     <a href="#legal">Legal</a>
   </div>
   <a class="nav-join" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer" aria-label="Join the Raven Discord server">
@@ -513,10 +514,10 @@
 <section class="hero" aria-label="Introduction">
   <div class="hero-badge">
     <i data-lucide="trophy" style="width:14px;height:14px"></i>
-    Free &amp; Paid Tournaments
+    Free 5v5 Tournaments
   </div>
-  <h1>Compete in League<br>tournaments. Win<br><span class="gold-gradient">real prizes.</span></h1>
-  <p class="hero-sub">Join a community running 5v5 League of Legends tournaments on Discord. MMR-balanced teams, double elimination brackets, and cash prizes. And between tournaments: dungeon crawls, casino games, trading cards, and clan wars.</p>
+  <h1>Compete in League<br>tournaments.<br><span class="gold-gradient">Claim the crown.</span></h1>
+  <p class="hero-sub">Join a community running free 5v5 League of Legends tournaments on Discord. MMR-balanced teams, double elimination brackets, live bracket images, and stream overlays. And between tournaments: dungeon crawls, trading cards, clan wars, and daily quests.</p>
   <div class="hero-cta">
     <a class="btn btn-primary btn-lg" href="https://discord.gg/CAzyGpVun7" target="_blank" rel="noopener noreferrer">
       Join Discord
@@ -534,7 +535,7 @@
   <div class="container">
     <div class="section-label">Tournament Flow</div>
     <h2 class="section-title">How it works</h2>
-    <p class="section-sub">From signup to prize pool in six steps. Everything is automated.</p>
+    <p class="section-sub">From signup to Grand Finals in six steps. Everything is automated.</p>
 
     <div class="step-grid">
       <div class="step-card fade-in">
@@ -558,8 +559,8 @@
         <p>Double elimination means everyone gets a second chance. Live brackets update after every match so you can follow along.</p>
       </div>
       <div class="step-card fade-in">
-        <h3>Win Prizes</h3>
-        <p>Top teams take home the prize pool. Both free and paid tournaments available.</p>
+        <h3>Reach the Finals</h3>
+        <p>Fight through the winners and losers brackets to Grand Finals. Champions take the title and the spotlight until the next event.</p>
       </div>
     </div>
   </div>
@@ -599,9 +600,9 @@
         <p>Visual brackets update after every match. Color-coded by status so you always know where you stand.</p>
       </div>
       <div class="feature-card fade-in">
-        <div class="feature-icon-wrap gold"><i data-lucide="trophy"></i></div>
-        <h3>Free &amp; Paid Events</h3>
-        <p>Play for fun in free tournaments or compete for cash in paid events. Something for every level of competition.</p>
+        <div class="feature-icon-wrap gold"><i data-lucide="user"></i></div>
+        <h3>Player Profiles</h3>
+        <p>Every player gets a profile card with their rank, MMR history chart, and tournament record, refreshed automatically.</p>
       </div>
       <div class="feature-card fade-in">
         <div class="feature-icon-wrap green"><i data-lucide="users"></i></div>
@@ -610,8 +611,8 @@
       </div>
       <div class="feature-card fade-in">
         <div class="feature-icon-wrap"><i data-lucide="monitor"></i></div>
-        <h3>Live Updates</h3>
-        <p>Follow along with real-time match results, team rosters, and standings updated after every game.</p>
+        <h3>Stream Overlays</h3>
+        <p>Broadcast-ready OBS overlays for every match: team rosters, live score, and bracket context for casters and streamers.</p>
       </div>
     </div>
   </div>
@@ -631,14 +632,14 @@
         <p>A full roguelike inside Discord. Pick a class, draft relics, fight elites, and push for the deepest floor on the leaderboard.</p>
       </div>
       <div class="feature-card fade-in">
-        <div class="feature-icon-wrap gold"><i data-lucide="dices"></i></div>
-        <h3>Casino &amp; Economy</h3>
-        <p>Blackjack, multiplayer poker, minesweeper, dice, and a weekly lottery. All played with Int Coins you earn free by hanging out.</p>
+        <div class="feature-icon-wrap gold"><i data-lucide="coins"></i></div>
+        <h3>Games &amp; Economy</h3>
+        <p>Card games, minesweeper, dice, and a weekly raffle, all played with Int Coins: a free virtual currency you earn by hanging out. No real money, ever.</p>
       </div>
       <div class="feature-card fade-in">
         <div class="feature-icon-wrap"><i data-lucide="layers"></i></div>
         <h3>Trading Cards</h3>
-        <p>Open packs, build a six-card deck, and challenge other members to wagered card battles.</p>
+        <p>Open packs, build a six-card deck, and challenge other members to head-to-head card battles.</p>
       </div>
       <div class="feature-card fade-in">
         <div class="feature-icon-wrap green"><i data-lucide="flag"></i></div>
@@ -659,49 +660,37 @@
   </div>
 </section>
 
-<!-- PRIZES -->
-<section id="prizes" class="prize-section">
+<!-- FAIR PLAY -->
+<section id="fair-play" class="prize-section">
   <div class="container">
     <div class="prize-layout">
       <div>
-        <div class="section-label gold">Prizes</div>
-        <h2 class="section-title">Play for glory.<br>Or play for cash.</h2>
-        <p class="section-sub">We run both free and paid tournaments. Compete for bragging rights or put up a buy-in and take home real cash.</p>
-
-        <div class="prize-split">
-          <div class="prize-bar">
-            <div class="prize-bar-label" style="color:var(--gold)">1st</div>
-            <div class="prize-bar-track"><div class="prize-bar-fill gold"></div></div>
-            <div class="prize-bar-pct">60%</div>
-          </div>
-          <div class="prize-bar">
-            <div class="prize-bar-label" style="color:var(--text-secondary)">2nd</div>
-            <div class="prize-bar-track"><div class="prize-bar-fill silver"></div></div>
-            <div class="prize-bar-pct">30%</div>
-          </div>
-          <div class="prize-bar">
-            <div class="prize-bar-label" style="color:#d97706">3rd</div>
-            <div class="prize-bar-track"><div class="prize-bar-fill bronze"></div></div>
-            <div class="prize-bar-pct">10%</div>
-          </div>
-        </div>
+        <div class="section-label gold">Fair Play</div>
+        <h2 class="section-title">Competitive integrity,<br>built in.</h2>
+        <p class="section-sub">Every tournament is free to enter and runs on verified accounts, balanced teams, and a reputation system that follows players across events. All competitions follow Riot's Community Competition Guidelines.</p>
       </div>
 
       <div class="prize-cards">
         <div class="prize-card green-border fade-in">
-          <div class="prize-card-icon green"><i data-lucide="heart"></i></div>
+          <div class="prize-card-icon green"><i data-lucide="shield-check"></i></div>
           <div>
-            <h3>Free Tournaments</h3>
-            <p>No buy-in required. Compete for bragging rights and community recognition.</p>
+            <h3>Riot Account Verification</h3>
+            <p>Players link and verify their Riot account before competing. No anonymous entries.</p>
           </div>
         </div>
         <div class="prize-card gold-border fade-in">
-          <div class="prize-card-icon gold"><i data-lucide="banknote"></i></div>
+          <div class="prize-card-icon gold"><i data-lucide="award"></i></div>
           <div>
-            <h3>Cash Prize Tournaments</h3>
-            <p>Entry fee goes to the prize pool. Top teams take home real money.</p>
+            <h3>Honor System</h3>
+            <p>After each tournament, players honor great teammates. Reputation carries into every event we run.</p>
           </div>
-          <div class="badge">New</div>
+        </div>
+        <div class="prize-card fade-in">
+          <div class="prize-card-icon indigo"><i data-lucide="user-check"></i></div>
+          <div>
+            <h3>Account Review</h3>
+            <p>New and unusual accounts are reviewed before seeding so experienced players can't hide in easier games.</p>
+          </div>
         </div>
       </div>
     </div>
